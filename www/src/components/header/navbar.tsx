@@ -1,41 +1,63 @@
 "use client";
-import Image from "next/image"
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
-    const navItems = [
-        { label: "Inicio", href: "#inicio" },
-        { label: "Quienes somos", href: "#quienes-somos" },
-        { label: "Servicios", href: "#servicios" },
-        { label: "Noticias", href: "#noticias" },
-        { label: "Testimonios", href: "#testimonios" },
-        { label: "Ubicaciones", href: "#ubicaciones" },
-    ];
+  const navItems = [
+    { label: "Inicio", href: "#inicio" },
+    { label: "Quienes somos", href: "#quienes-somos" },
+    { label: "Servicios", href: "#servicios" },
+    { label: "Proceso", href: "#proceso" },
+    { label: "Testimonios", href: "#testimonios" },
+    { label: "Ubicaciones", href: "#ubicaciones" },
+  ];
 
+  const [isTop, setIsTop] = useState(true);
+  const [isBottom, setIsBottom] = useState(false);
 
-    return (
-        <div className={`flex flex-row items-center justify-around w-full h-40 fixed z-50 px-6 transition-colors duration-300 bg-black`}>
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const scrollHeight = document.documentElement.scrollHeight;
+      const clientHeight = window.innerHeight;
+      const atBottom = scrollTop + clientHeight >= scrollHeight - 10;
 
-            <Image
-                src="/images/atf_logo.png"
-                alt="logo"
-                height={200} // smaller on mobile
-                width={200}
-                className="object-contain" // bigger on md+
-            />
+      setIsTop(scrollTop <= 10);
+      setIsBottom(atBottom);
+    };
 
-            <nav className="hidden md:flex flex-row items-center gap-x-6 text-white w-2/3 text-lg font-thin">
-                {navItems.map(({ label, href }) => (
-                    <a
-                        key={label}
-                        href={href}
-                        className="relative before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-yellow-400 before:transition-all before:duration-300 before:ease-in-out hover:before:w-full hover:before:left-0"
-                    >
-                        {label}
-                    </a>
-                ))}
-            </nav>
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-        </div>
-    )
+  const baseClasses =
+    "flex flex-row items-center justify-around w-full md:h-40 h-20 fixed z-50 px-6 transition-all duration-300";
+  const backgroundClass = isTop
+    ? "bg-transparent"
+    : "bg-black/90 backdrop-blur-md";
+  const visibilityClass = isBottom ? "opacity-0 pointer-events-none" : "opacity-100";
+
+  return (
+    <div className={`${baseClasses} ${backgroundClass} ${visibilityClass}`}>
+      <Image
+        src="/images/atf_logo.png"
+        alt="logo"
+        height={200}
+        width={200}
+        className="object-contain h-[120px] w-[120px] md:h-[200px] md:w-[200px]"
+      />
+
+      <nav className="hidden md:flex flex-row items-center gap-x-6 text-white w-2/3 text-md font-thin">
+        {navItems.map(({ label, href }) => (
+          <a
+            key={label}
+            href={href}
+            className="relative before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-yellow-400 before:transition-all before:duration-300 before:ease-in-out hover:before:w-full hover:before:left-0"
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  );
 }
