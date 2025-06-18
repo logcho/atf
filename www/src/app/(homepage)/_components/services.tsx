@@ -1,7 +1,7 @@
 export default function Services() {
     return (
       <section
-        className="flex flex-col items-center justify-center bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black h-auto md:h-200 w-full py-16 px-6"
+        className="flex flex-col items-center justify-center bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black h-auto md:h-200 w-full py-16 px-6 scroll-mt-40"
         id="servicios"
       >
         <h2 className="text-lg font-extrabold" style={{ color: "#ffce1b" }}>

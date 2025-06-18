@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Process() {
     return (
         <section
-            className="flex flex-col items-center justify-center bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black py-20 px-6 w-full h-auto md:h-200"
+            className="flex flex-col items-center justify-center bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black py-20 px-6 w-full h-auto md:h-200 scroll-mt-40"
             id="proceso"
         >
             <h2 className="text-lg font-extrabold" style={{ color: "#ffce1b" }}>

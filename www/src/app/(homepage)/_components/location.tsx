@@ -1,7 +1,7 @@
 export default function Location() {
     return (
       <section
-        className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-6 items-center justify-items-center bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black h-auto md:h-200 w-full py-16 md:px-30"
+        className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-6 items-center justify-items-center bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black h-auto md:h-200 w-full py-16 md:px-30 scroll-mt-40"
         id="ubicaciones"
       >
         {/* Text Content */}

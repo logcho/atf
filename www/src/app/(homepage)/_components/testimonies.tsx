@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Testimonies() {
     const testimonies = [
         {
@@ -22,7 +24,7 @@ export default function Testimonies() {
 
     return (
         <section
-            className="flex flex-col items-center justify-center bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black py-20 px-6 w-full h-auto"
+            className="flex flex-col items-center justify-center bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black py-20 px-6 w-full h-auto scroll-mt-40"
             id="testimonios"
         >
             <h2 className="text-lg font-extrabold mb-2" style={{ color: "#ffce1b" }}>
@@ -39,13 +41,15 @@ export default function Testimonies() {
                         className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center"
                     >
                         {testimony.image && (
-                            <img
-                                src={testimony.image}
+                            <Image 
+                                src={testimony.image} 
                                 alt={testimony.name}
+                                width={200} 
+                                height={200} 
                                 className="w-16 h-16 rounded-full mb-4 object-cover"
                             />
                         )}
-                        <p className="text-gray-700 italic mb-4">"{testimony.feedback}"</p>
+                        <p className="text-gray-700 italic mb-4">&quot;{testimony.feedback}&quot;</p>
                         <h3 className="font-bold text-sm text-gray-900">{testimony.name}</h3>
                     </div>
                 ))}

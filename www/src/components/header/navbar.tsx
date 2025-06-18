@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react"; // optional: or use your own icons
 
 export default function Navbar() {
   const navItems = [
@@ -14,6 +15,7 @@ export default function Navbar() {
 
   const [isTop, setIsTop] = useState(true);
   const [isBottom, setIsBottom] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,6 +60,31 @@ export default function Navbar() {
           </a>
         ))}
       </nav>
+
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden text-white"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+      >
+        {menuOpen ? <X size={28} /> : <Menu size={28} />}
+      </button>
+
+      {/* Mobile Menu Dropdown */}
+{menuOpen && (
+  <div className="absolute top-full left-0 w-full bg-black/90 rounded-b-2xl backdrop-blur-md text-white flex flex-col items-center py-4 md:hidden">
+    {navItems.map(({ label, href }) => (
+      <a
+        key={label}
+        href={href}
+        onClick={() => setMenuOpen(false)}
+        className="py-2 text-lg hover:text-yellow-400 transition-colors"
+      >
+        {label}
+      </a>
+    ))}
+  </div>
+)}
     </div>
   );
 }

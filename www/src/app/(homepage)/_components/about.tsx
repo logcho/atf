@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <section
-      className="flex flex-col md:flex-row items-center justify-center gap-10 bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black py-20 px-6 w-full"
+      className="flex flex-col md:flex-row items-center justify-center gap-10 bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black py-20 px-6 w-full h-auto md:h-160 scroll-mt-40"
       id="quienes-somos"
     >
       {/* Left: Image */}
@@ -13,7 +13,7 @@ export default function About() {
           alt="julio"
           height={400}
           width={400}
-          className="rounded-xl shadow-lg object-cover bg-[url('/images/bg.jpg')] bg-cover bg-center bg-no-repeat"
+          className="rounded-xl shadow-lg object-cover bg-[url('/images/bg.jpg')] bg-cover bg-center bg-no-repeat md:h-[400px] md:w-[300px] h-[300px] w-[200px]"
         />
       </div>
 
