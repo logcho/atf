@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="/www/public//images/atf_logo.png" alt="ATF Solutions Logo" width="200"/>
+</p>
+
 # ATF Solutions
 
 This is the official codebase for the **ATF Solutions** website — a modern, responsive, and multilingual landing page built with [Next.js 15](https://nextjs.org/), Tailwind CSS, and TypeScript.
