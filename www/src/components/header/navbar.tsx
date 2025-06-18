@@ -72,7 +72,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
 {menuOpen && (
-  <div className="absolute top-full left-0 w-full bg-black/90 rounded-b-2xl backdrop-blur-md text-white flex flex-col items-center py-4 md:hidden">
+  <div className="absolute top-full left-0 w-full bg-black/90 rounded-b-2xl backdrop-blur-md text-white font-thin flex flex-col items-center py-4 md:hidden">
     {navItems.map(({ label, href }) => (
       <a
         key={label}
