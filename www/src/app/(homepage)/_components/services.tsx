@@ -1,9 +1,12 @@
 export default function Services() {
     return (
       <section
-        className="flex flex-col items-center justify-center bg-gradient-to-br from-white via-gray-100 to-white text-black min-h-screen w-full py-16 px-6"
+        className="flex flex-col items-center justify-center bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black h-auto md:h-200 w-full py-16 px-6"
         id="servicios"
       >
+        <h2 className="text-lg font-extrabold" style={{ color: "#ffce1b" }}>
+          Servicios
+        </h2>
         <h1 className="text-4xl font-thin text-center mb-16 max-w-3xl">
           Soluciones Financieras Completas para Tu Vida en EE.UU.
         </h1>

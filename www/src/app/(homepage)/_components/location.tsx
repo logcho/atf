@@ -1,11 +1,14 @@
 export default function Location() {
     return (
       <section
-        className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-6 items-center justify-items-center bg-gradient-to-br from-white via-gray-100 to-white text-black min-h-screen w-full py-16 md:px-30"
+        className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-6 items-center justify-items-center bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black h-auto md:h-200 w-full py-16 md:px-30"
         id="ubicaciones"
       >
         {/* Text Content */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4 max-w-md">
+          <h2 className="text-lg font-extrabold" style={{ color: "#ffce1b" }}>
+            Ubicaciones
+          </h2>
           <h1 className="text-4xl font-extrabold">
             Nuestra Oficina
           </h1>
