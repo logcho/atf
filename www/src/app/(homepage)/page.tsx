@@ -8,7 +8,7 @@ import Footer from "./_components/footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center h-auto">
+    <main className="flex flex-col items-center justify-center h-auto bg-black">
       <Hero />
       <About />
       <Services />
