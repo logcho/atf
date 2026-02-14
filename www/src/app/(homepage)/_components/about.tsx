@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <section
       className="flex flex-col md:flex-row items-center justify-center gap-10 bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black py-20 px-6 w-full h-auto md:h-160 scroll-mt-40"
@@ -23,11 +28,11 @@ export default function About() {
           className="text-lg font-extrabold mb-2"
           style={{ color: "#ffce1b" }}
         >
-          ¿Quiénes Somos?
+          {t("about_title")}
         </h2>
-        <h1 className="text-4xl font-thin mb-4">Conoce a Julio y ATF Solutions</h1>
+        <h1 className="text-4xl font-thin mb-4">{t("about_heading")}</h1>
         <p className="text-base leading-relaxed">
-          En ATF Solutions, liderados por Julio, ofrecemos soluciones financieras personalizadas para ayudarte a mejorar tu crédito, resolver tus impuestos y alcanzar tus metas económicas. Nos enorgullece brindar atención cercana, honesta y eficaz a cada cliente.
+          {t("about_body")}
         </p>
       </div>
     </section>

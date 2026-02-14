@@ -1,15 +1,20 @@
+"use client";
+
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Process() {
+    const { t } = useLanguage();
+
     return (
         <section
             className="flex flex-col items-center justify-center bg-gradient-to-t from-gray-100 via-white to-gray-100 text-black py-20 px-6 w-full h-auto md:h-200 scroll-mt-40"
             id="proceso"
         >
             <h2 className="text-lg font-extrabold" style={{ color: "#ffce1b" }}>
-                Proceso
+                {t("process_title")}
             </h2>
-            <h1 className="text-4xl font-thin mb-12 text-center">Nuestro Proceso</h1>
+            <h1 className="text-4xl font-thin mb-12 text-center">{t("process_heading")}</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full items-center">
                 {/* Left Column */}
@@ -24,10 +29,10 @@ export default function Process() {
                             className="mx-auto mb-4"
                         />
                         <h2 className="text-xl font-bold mb-2">
-                            Contacto Inicial y Registro
+                            {t("process_step1_title")}
                         </h2>
                         <p className="text-sm text-gray-700">
-                            Completa nuestro formulario seguro o llámanos para decirnos qué necesitas.
+                            {t("process_step1_desc")}
                         </p>
                     </div>
 
@@ -41,10 +46,10 @@ export default function Process() {
                             className="mx-auto mb-4"
                         />
                         <h2 className="text-xl font-bold mb-2">
-                            Plan de Acción y Ejecución
+                            {t("process_step2_title")}
                         </h2>
                         <p className="text-sm text-gray-700">
-                            Presentamos una estrategia clara y comenzamos a trabajar en tu crédito e impuestos.
+                            {t("process_step2_desc")}
                         </p>
                     </div>
                 </div>
@@ -72,10 +77,10 @@ export default function Process() {
                             className="mx-auto mb-4"
                         />
                         <h2 className="text-xl font-bold mb-2">
-                            Análisis y Diagnóstico
+                            {t("process_step3_title")}
                         </h2>
                         <p className="text-sm text-gray-700">
-                            Revisamos tu reporte o documentos fiscales y te explicamos tus opciones sin costo.
+                            {t("process_step3_desc")}
                         </p>
                     </div>
 
@@ -89,10 +94,10 @@ export default function Process() {
                             className="mx-auto mb-4"
                         />
                         <h2 className="text-xl font-bold mb-2">
-                            Resultados y Seguimiento
+                            {t("process_step4_title")}
                         </h2>
                         <p className="text-sm text-gray-700">
-                            Monitoreamos tu progreso, te mantenemos informado y celebramos tus logros financieros.
+                            {t("process_step4_desc")}
                         </p>
                     </div>
                 </div>

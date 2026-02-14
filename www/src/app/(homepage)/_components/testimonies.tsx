@@ -1,23 +1,25 @@
+"use client";
+
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Testimonies() {
+    const { t } = useLanguage();
+
     const testimonies = [
         {
             name: "María G.",
-            feedback:
-                "Gracias a ATF Solutions mejoré mi crédito en pocos meses. El proceso fue claro y siempre estuvieron disponibles.",
+            feedback: t("testimony_1_feedback"),
             image: "/images/person1.png", // optional
         },
         {
             name: "José R.",
-            feedback:
-                "Tenía muchas dudas con mis impuestos, pero el equipo fue profesional, rápido y muy amable. ¡Los recomiendo!",
+            feedback: t("testimony_2_feedback"),
             image: "/images/person2.png",
         },
         {
             name: "Ana L.",
-            feedback:
-                "Los resultados superaron mis expectativas. Ahora tengo una mejor salud financiera y mucha más confianza.",
+            feedback: t("testimony_3_feedback"),
             image: "/images/person3.png",
         },
     ];
@@ -28,10 +30,10 @@ export default function Testimonies() {
             id="testimonios"
         >
             <h2 className="text-lg font-extrabold mb-2" style={{ color: "#ffce1b" }}>
-                Testimonios
+                {t("testimonies_title")}
             </h2>
             <h1 className="text-4xl font-thin mb-12 text-center">
-                Lo que nuestros clientes opinan
+                {t("testimonies_heading")}
             </h1>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
@@ -41,11 +43,11 @@ export default function Testimonies() {
                         className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center"
                     >
                         {testimony.image && (
-                            <Image 
-                                src={testimony.image} 
+                            <Image
+                                src={testimony.image}
                                 alt={testimony.name}
-                                width={200} 
-                                height={200} 
+                                width={200}
+                                height={200}
                                 className="w-16 h-16 rounded-full mb-4 object-cover"
                             />
                         )}

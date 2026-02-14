@@ -1,26 +1,64 @@
+"use client";
+
 import Image from "next/image"
-export default function Footer(){
+import { useLanguage } from "@/context/LanguageContext";
+import { Phone, Mail } from "lucide-react";
+
+export default function Footer() {
+    const { t } = useLanguage();
+    const year = new Date().getFullYear();
+
     return (
-        <footer className="flex flex-col items-center justify-center bg-black text-white md:h-80 h-auto w-full py-8">
-            <div className="grid grid-cols-1 md:grid-cols-2">
+        <footer className="bg-black text-white py-12 w-full">
+            <div className="max-w-full mx-auto px-6 flex flex-col items-center text-center space-y-8">
+                {/* Logo */}
                 <Image
                     src="/images/atf_logo.png"
-                    alt="logo"
-                    height={200}
-                    width={200}
-                    className="object-contain h-[120px] w-[120px] md:h-[200px] md:w-[200px]"
+                    alt="ATF Solutions Logo"
+                    height={120}
+                    width={120}
+                    className="object-contain"
                 />
-                <div className="flex flex-col justify-center mx-4 text-sm md:text-lg">
-                    <h2 className="font-extrabold uppercase" style={{ color: "#ffce1b" }}>
-                        <span className="border-b-2 border-grey-400">
-                            Contacto
-                        </span>
+
+                {/* Contact Info */}
+                <div className="flex flex-col items-center space-y-4">
+                    <h2 className="text-lg font-bold tracking-widest uppercase" style={{ color: "#ffce1b" }}>
+                        {t("footer_contact")}
                     </h2>
-                    <ul className="mt-4 space-y-2 font-thin">
-                        <li>📞 +1 (214) 898-5404</li>
-                        <li>✉️ contacto@atfsolutions.com</li>
-                        <li>✉️ impuesto@atfsolutions.net</li>
-                    </ul>
+
+                    <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-center text-gray-300 font-light">
+                        <a
+                            href="tel:+12148985404"
+                            className="flex items-center gap-2 hover:text-yellow-400 transition-colors group"
+                        >
+                            <Phone size={20} className="text-yellow-500 group-hover:text-yellow-400" />
+                            <span>+1 (214) 898-5404</span>
+                        </a>
+
+                        <div className="flex flex-col md:flex-row gap-4">
+                            <a
+                                href="mailto:contacto@atfsolutions.com"
+                                className="flex items-center gap-2 hover:text-yellow-400 transition-colors group"
+                            >
+                                <Mail size={20} className="text-yellow-500 group-hover:text-yellow-400" />
+                                <span>contacto@atfsolutions.com</span>
+                            </a>
+                            <a
+                                href="mailto:impuesto@atfsolutions.net"
+                                className="flex items-center gap-2 hover:text-yellow-400 transition-colors group"
+                            >
+                                <Mail size={20} className="text-yellow-500 group-hover:text-yellow-400" />
+                                <span>impuesto@atfsolutions.net</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Copyright */}
+                <div className="border-t border-gray-800 w-full max-w-2xl pt-8 mt-4">
+                    <p className="text-gray-500 text-sm">
+                        &copy; {year} ATF Solutions. {t("footer_rights")}
+                    </p>
                 </div>
             </div>
         </footer>
