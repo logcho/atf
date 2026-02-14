@@ -24,9 +24,16 @@ export const translations = {
         nav_switch_lang: "Switch to English",
 
         // Hero
-        hero_title: "Optimiza Tu Crédito y Presenta Tus Impuestos Fácil y Seguro",
-        hero_subtitle: "Tu solución integral en EE.UU.: reparamos tu crédito, preparamos tus taxes y corregimos errores pasados. Todo con expertos que hablan tu idioma.",
-        hero_cta: "Descarga aquí tu reporte GRATIS",
+        hero_audience_callout: "Crédito e Impuestos en EE.UU.",
+        hero_title: "Mejora Tu Crédito y Presenta Tus Impuestos",
+        hero_title_highlight: " Fácil y Seguro",
+        hero_subtitle: "Te ayudamos a corregir errores en tu historial, mejorar tu perfil financiero y declarar tus impuestos correctamente con asesoría profesional.",
+        hero_trust_1: "Atención personalizada",
+        hero_trust_2: "Asesoría profesional en EE.UU.",
+        hero_trust_3: "Proceso claro y transparente",
+        hero_cta_primary: "Revisa Tu Crédito GRATIS Ahora",
+        hero_cta_secondary: "Habla con un asesor →",
+        hero_disclaimer: "No afecta tu crédito. Cancelas cuando quieras.",
 
         // About
         about_title: "¿Quiénes Somos?",
@@ -89,9 +96,16 @@ export const translations = {
         nav_switch_lang: "Cambiar a Español",
 
         // Hero
-        hero_title: "Optimize Your Credit and File Your Taxes Easily and Securely",
-        hero_subtitle: "Your comprehensive solution in the U.S.: we repair your credit, prepare your taxes, and correct past errors. All with experts who speak your language.",
-        hero_cta: "Download your FREE report here",
+        hero_audience_callout: "Credit and Taxes in the U.S.",
+        hero_title: "Improve Your Credit and File Your Taxes",
+        hero_title_highlight: " Easy and Secure",
+        hero_subtitle: "We help you correct errors in your history, improve your financial profile, and file your taxes correctly with professional advice.",
+        hero_trust_1: "Personalized Attention",
+        hero_trust_2: "Professional Advice in the U.S.",
+        hero_trust_3: "Clear and Transparent Process",
+        hero_cta_primary: "Check Your Credit for FREE Now",
+        hero_cta_secondary: "Speak with an Advisor →",
+        hero_disclaimer: "Does not affect your credit. Cancel anytime.",
 
         // About
         about_title: "Who Are We?",
